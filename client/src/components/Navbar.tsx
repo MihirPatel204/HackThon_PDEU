@@ -67,13 +67,18 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
               <li className="navbar-item">
+                <Link to="/admin" className={`navbar-link ${location.pathname === '/admin' ? 'active' : ''}`}>
+                  Admin
+                </Link>
+              </li>
+              <li className="navbar-item">
                 <button onClick={logout} className="btn btn-outline-light btn-sm">
                   Logout
                 </button>
               </li>
               <li className="navbar-item user-greeting">
                 <span className="user-icon">👤</span>
-                <span className="user-name">Hi, {user.name.split(' ')[0]}</span>
+                <span className="user-name">Hi, {user?.name ? user.name.split(' ')[0] : 'User'}</span>
               </li>
             </>
           ) : (

@@ -7,7 +7,8 @@ import {
   ReportsPage,
   ProfilePage,
   LoginPage,
-  RegisterPage
+  RegisterPage,
+  AdminPage
 } from './pages';
 import { AppProviders } from './context/index';
 import PrivateRoute from './routes/PrivateRoute';
@@ -52,6 +53,14 @@ const App: React.FC = () => {
                 element={
                   <PrivateRoute>
                     <ProfilePage />
+                  </PrivateRoute>
+                }
+              />
+              <Route 
+                path="/admin" 
+                element={
+                  <PrivateRoute>
+                    <AdminPage />
                   </PrivateRoute>
                 }
               />
